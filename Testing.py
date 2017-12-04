@@ -11,35 +11,25 @@ app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
-@app.route('/api/getdecisiontree', methods=['GET'])
+@app.route('/api/getdecisiontree', methods=['POST'])
 def get_decision_tree():
-    teste = json.dumps({
-        'parametro1': 0.2,
-        'parametro2': 0.3,
-        'parametro3': 0.5,
-        'parametro4': 0.5
-    })
-    tree = DecisionTree(teste)
+    obj = request.json
+    tree = DecisionTree(obj)
     return jsonify(tree.load_iris_data())
 
 
-@app.route('/api/getsvm', methods=['GET'])
+@app.route('/api/getsvm', methods=['POST'])
 def get_svm():
-    s = SVM()
+    obj = request.json
+    s = SVM(obj)
     return jsonify(s.load_iris_data())
 
 
-@app.route('/api/getnaive', methods=['GET'])
+@app.route('/api/getnaive', methods=['POST'])
 def get_naive():
-    naive = NaiveBayes()
+    obj = request.json
+    naive = NaiveBayes(obj)
     return jsonify(naive.load_iris_data())
-
-
-@app.route('/api/testPostJson', methods=['POST'])
-def testePost():
-    content = request.json
-    print(content)
-    return (jsonify(content))
 
 
 @app.route('/Application/page')

@@ -10,34 +10,45 @@ from sklearn.metrics import accuracy_score
 from sklearn import svm
 from sklearn import datasets
 
+
 class SVM:
 
-    def __init__(self):
+    targets_testes = []
+    base = 0
+
+    def __init__(self, obj):
         print("SVM iniciado")
+        self.targets_testes = []
+        self.base = 0
+        json_received = obj
+        self.base = json_received['base']
+        if self.base == 1:
+            self.targets_testes.append(json_received['parametro1'])
+            self.targets_testes.append(json_received['parametro2'])
+            self.targets_testes.append(json_received['parametro3'])
+            self.targets_testes.append(json_received['parametro4'])
 
     def load_iris_data(self):
-        data = pd.read_csv("IRIS.csv")
-        features = data[["SepalLength", "SepalWidth", "PetalLength", "PetalWidth"]]
-        target_variables = data.Class
-        json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
-        return self.train_data(json_object, features, target_variables)
+        if self.base == 1:
+            data = pd.read_csv("IRIS.csv")
+            features = data[["SepalLength", "SepalWidth", "PetalLength", "PetalWidth"]]
+            target_variables = data.Class
+            json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
+            return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
 
     def train_data(self, json_object, features, target_variables):
-        # 80% do dataset está sendo usado para treino(variaveis train), e 20% está sendo usado para testes(variaveis Tes).
-        feature_train, feature_test, target_train, target_test = train_test_split(features, target_variables, test_size=.2)
-
-        model = svm.SVC(gamma=0.001, C=100.0)
+        model = svm.SVC(gamma=0.001, C=100.0, probability=True)
         t0 = time.clock()
-        fitted_model = model.fit(feature_train, target_train)
+        fitted_model = model.fit(features, target_variables)
         t1 = time.clock()
         training_time = t1 - t0
 
         t2 = time.clock()
-        predictions = fitted_model.predict(feature_test)
+        predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 4))
         t3 = time.clock()
         prediction_time = t3 - t2
 
-        return self.return_data(json_object, target_test, predictions, training_time, prediction_time)
+        return self.return_data(json_object, fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)), predictions, training_time, prediction_time)
 
     @staticmethod
     def generate_graphics(features, target_variables):
@@ -90,16 +101,14 @@ class SVM:
         return json_data
 
     @staticmethod
-    def return_data(json_object, target_test, predictions, training_time, prediction_time):
-        print(target_test)
-        print(predictions)
-        confusion_matrix_return = confusion_matrix(target_test, predictions)
-        accuracy_return = accuracy_score(target_test, predictions)
+    def return_data(json_object, predict_proba, predictions, training_time, prediction_time):
+        # confusion_matrix_return = confusion_matrix(target_test, predictions)
+        # accuracy_return = accuracy_score(target_test, predictions)
         return json.dumps({
-            'Tipo': 'SVM',
-            'Grafico': json_object,
-            'confusion_matrix': confusion_matrix_return.tolist(),
-            'accuracy': accuracy_return,
+            'tipo': 'SVM',
+            'grafico': json_object,
+            'prediction': predictions.tolist(),
+            'accuracy': predict_proba.tolist(),
             'training_time': training_time,
             'prediction_time': prediction_time
         })
