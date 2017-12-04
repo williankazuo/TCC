@@ -1,0 +1,99 @@
+.title_row{
+  background-color: #304df2;
+  height:50px;
+}
+
+.content_row{
+  height:920px;
+}
+
+#main_title{
+  color: #ffffff;
+  font-size:25px;
+}
+
+#options_column{
+  background-color: #24adf2;
+  height:920px;
+  box-shadow: 2px 0px 5px -2px #8e8d8e;
+}
+
+#data_column{
+  background-color: #ffffff;
+  color:#000000;
+  box-shadow: 2px 0px 5px -2px #8e8d8e;
+}
+
+#first_quad{
+  background-color:#ffffff;
+  height:460px;
+  border: solid 1px #bfbdbd;
+}
+
+#second_quad{
+  background-color:#ffffff;
+  height:460px;
+  border: solid 1px #bfbdbd;
+}
+
+#third_quad{
+  background-color:#ffffff;
+  height:460px;
+  border: solid 1px #bfbdbd;
+}
+
+#fourth_quad{
+  background-color:#ffffff;
+  height:460px;
+  border: solid 1px #bfbdbd;
+}
+
+#db_select{
+  width: 100%;
+}
+
+.content_row_1{
+  margin: 40px 0 0 0;
+  color:#ffffff;
+}
+
+#content_row_2{
+  margin: 80px 0 0 0;
+  display:none;
+  color:#ffffff;
+  font-weight: bold;
+  background-color: #178ac4;
+  padding: 20px;
+}
+
+#content_row_3{
+  margin: 80px 0 0 0;
+  display:none;
+  color:#ffffff;
+  font-weight: bold;
+  background-color: #178ac4;
+  padding: 20px;
+}
+
+#content_row_4{
+  margin: 80px 0 0 0;
+  display:none;
+  color:#ffffff;
+  font-weight: bold;
+  background-color: #178ac4;
+  padding: 20px;
+}
+
+#content_row_5{
+  margin: 80px 0 0 0;
+}
+
+.input_boxes{
+  width:100%;
+  margin:0 0 10px 0;
+}
+
+.btn_iniciar{
+  margin: 50px 0 0 0;
+  width:100%;
+}
