@@ -27,6 +27,18 @@ class SVM:
             self.targets_testes.append(json_received['parametro2'])
             self.targets_testes.append(json_received['parametro3'])
             self.targets_testes.append(json_received['parametro4'])
+        else:
+            self.targets_testes.append(json_received['parametro1'])
+            self.targets_testes.append(json_received['parametro2'])
+            self.targets_testes.append(json_received['parametro3'])
+            self.targets_testes.append(json_received['parametro4'])
+            self.targets_testes.append(json_received['parametro5'])
+            self.targets_testes.append(json_received['parametro6'])
+            self.targets_testes.append(json_received['parametro7'])
+            self.targets_testes.append(json_received['parametro8'])
+            self.targets_testes.append(json_received['parametro9'])
+            self.targets_testes.append(json_received['parametro10'])
+            print("segunda base")
 
     def load_iris_data(self):
         if self.base == 1:
@@ -35,20 +47,40 @@ class SVM:
             target_variables = data.Class
             json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
             return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
+        else:
+            data = pd.read_csv("POKER-HAND.csv")
+            features = data[["SuitOfCard1", "RankOfCard1", "SuitOfCard2", "RankOfCard2", "SuitOfCard3", "RankOfCard3", "SuitOfCard4", "RankOfCard4", "SuitOfCard5", "RankOfCard5"]]
+            target_variables = data.Class
+            # json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
+            json_object=[{
+                "teste":1
+            }]
+            return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
 
     def train_data(self, json_object, features, target_variables):
-        model = svm.SVC(gamma=0.001, C=100.0, probability=True)
+        model = svm.SVC(gamma=0.001, C=100.0, probability=True, kernel='linear')
         t0 = time.clock()
+        print(features)
         fitted_model = model.fit(features, target_variables)
         t1 = time.clock()
         training_time = t1 - t0
-
         t2 = time.clock()
-        predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 4))
+
+        if self.base == 1:
+            predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 4))
+        else:
+            predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 10))
         t3 = time.clock()
         prediction_time = t3 - t2
 
-        return self.return_data(json_object, fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)), predictions, training_time, prediction_time)
+        if self.base == 1:
+            return self.return_data(json_object,
+                                    fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)),
+                                    predictions, training_time, prediction_time)
+        else:
+            return self.return_data(json_object,
+                                    fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 10)),
+                                    predictions, training_time, prediction_time)
 
     @staticmethod
     def generate_graphics(features, target_variables):

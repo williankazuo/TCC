@@ -31,6 +31,16 @@ class DecisionTree:
             self.targets_testes.append(json_received['parametro3'])
             self.targets_testes.append(json_received['parametro4'])
         else:
+            self.targets_testes.append(json_received['parametro1'])
+            self.targets_testes.append(json_received['parametro2'])
+            self.targets_testes.append(json_received['parametro3'])
+            self.targets_testes.append(json_received['parametro4'])
+            self.targets_testes.append(json_received['parametro5'])
+            self.targets_testes.append(json_received['parametro6'])
+            self.targets_testes.append(json_received['parametro7'])
+            self.targets_testes.append(json_received['parametro8'])
+            self.targets_testes.append(json_received['parametro9'])
+            self.targets_testes.append(json_received['parametro10'])
             print('segunda base')
 
     def load_iris_data(self):
@@ -41,7 +51,15 @@ class DecisionTree:
             json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
 
             return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
-        # return "Teste"
+        else:
+            data = pd.read_csv("POKER-HAND.csv")
+            features = data[["SuitOfCard1", "RankOfCard1", "SuitOfCard2", "RankOfCard2", "SuitOfCard3", "RankOfCard3", "SuitOfCard4", "RankOfCard4", "SuitOfCard5", "RankOfCard5"]]
+            target_variables = data.Class
+            # json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
+            json_object=[{
+                "teste":1
+            }]
+            return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
 
     def train_data(self, json_object, features, target_variables):
         model = DecisionTreeClassifier()
@@ -53,12 +71,19 @@ class DecisionTree:
         self.generate_graph_viz(fitted_model)
 
         t2 = time.clock()
-        predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 4))
+        if self.base == 1:
+            predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 4))
+        else:
+            predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 10))
         t3 = time.clock()
         prediction_time = t3 - t2
 
-        # print(fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)))
-        return self.return_data(json_object, fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)), predictions, training_time, prediction_time)
+        if self.base == 1:
+            return self.return_data(json_object, fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)), predictions, training_time, prediction_time)
+        else:
+            return self.return_data(json_object,
+                                    fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 10)),
+                                    predictions, training_time, prediction_time)
 
     @staticmethod
     def generate_graphics(features, target_variables):

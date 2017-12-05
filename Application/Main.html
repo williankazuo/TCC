@@ -29,36 +29,45 @@
               <b><p>Selecione o Banco:</p></b>
               <select id="db_select">
                 <option value="op0">Selecione</option>
-                <option value="op1">Flor</option>
-                <option value="op2">Dota 2</option>
-                <option value="op3">Charlotte</option>
+                <option value="op1">Iris DataSet</option>
+                <option value="op2">PokerHand DataSet</option>
               </select>
             </div>
           </div>
           <div class="row" id="content_row_2">
             <div class="col-md-12">
-              <label for="tamflor">Tamanho Flor</label>
-              <input type="text" class="input_boxes" name="tamflor" placeholder="Tamanho da Flor" id="flor1"></input>
-              <label for="compflor">Comprimento Flor</label>
-              <input type="text" class="input_boxes" name="compflor" placeholder="Comprimento da Flor" id="flor2"></input>
-              <label for="compflor">Comprimento Flor</label>
-              <input type="text" class="input_boxes" name="compflor" placeholder="Comprimento da Flor" id="flor3"></input>
+              <label for="compsep">Comprimento da Sépala(cm)</label>
+              <input type="text" class="input_boxes" name="compsep" placeholder="Tamanho da Flor" id="iris1"></input>
+              <label for="largsep">Largura da Sépala(cm)</label>
+              <input type="text" class="input_boxes" name="largsep" placeholder="Comprimento da Flor" id="iris2"></input>
+              <label for="comppet">Comprimento da Pétala(cm)</label>
+              <input type="text" class="input_boxes" name="comppet" placeholder="Comprimento da Flor" id="iris3"></input>
+              <label for="largpet">Largura da Pétala(cm)</label>
+              <input type="text" class="input_boxes" name="largpet" placeholder="Comprimento da Flor" id="iris4"></input>
             </div>
           </div>
           <div class="row" id="content_row_3">
             <div class="col-md-12">
-              <label for="tamdota">Tamanho Dota2</label>
-              <input type="text" class="input_boxes" name="tamdota" placeholder="Tamanho do Dota"></input>
-              <label for="compdota">Comprimento Dota2</label>
-              <input type="text" class="input_boxes" name="compdota" placeholder="Comprimento do Dota"></input>
-            </div>
-          </div>
-          <div class="row" id="content_row_4">
-            <div class="col-md-12">
-              <label for="tamchar">Tamanho Charlotte</label>
-              <input type="text" class="input_boxes" name="tamchar" placeholder="Tamanho da Charlotte"></input>
-              <label for="compchar">Comprimento Charlotte</label>
-              <input type="text" class="input_boxes" name="compchar" placeholder="Comprimento da Charlotte"></input>
+              <label for="tamdota">Carta 1</label>
+              <input type="text" class="input_boxes2" name="carta1" placeholder="Tamanho do Dota" id="poker1"></input>
+              <label for="tamdota">Naipe 1</label>
+              <input type="text" class="input_boxes2" name="naipe1" placeholder="Tamanho do Dota" id="poker2"></input>
+              <label for="tamdota">Carta 2</label>
+              <input type="text" class="input_boxes2" name="carta2" placeholder="Tamanho do Dota" id="poker3"></input>
+              <label for="tamdota">Naipe 2</label>
+              <input type="text" class="input_boxes2" name="naipe2" placeholder="Tamanho do Dota" id="poker4"></input>
+              <label for="tamdota">Carta 3</label>
+              <input type="text" class="input_boxes2" name="carta3" placeholder="Tamanho do Dota" id="poker5"></input>
+              <label for="tamdota">Naipe 3</label>
+              <input type="text" class="input_boxes2" name="naipe3" placeholder="Tamanho do Dota" id="poker6"></input>
+              <label for="tamdota">Carta 4</label>
+              <input type="text" class="input_boxes2" name="carta4" placeholder="Tamanho do Dota" id="poker7"></input>
+              <label for="tamdota">Naipe 4</label>
+              <input type="text" class="input_boxes2" name="naipe4" placeholder="Tamanho do Dota" id="poker8"></input>
+              <label for="tamdota">Carta 5</label>
+              <input type="text" class="input_boxes2" name="carta5" placeholder="Tamanho do Dota" id="poker9"></input>
+              <label for="tamdota">Naipe 5</label>
+              <input type="text" class="input_boxes2" name="naipe5" placeholder="Tamanho do Dota" id="poker10"></input>
             </div>
           </div>
           <div class="row text-center" id="content_row_5">
@@ -178,22 +187,14 @@
           case "op1":
             $("#content_row_2").show();
             $("#content_row_3").hide();
-            $("#content_row_4").hide();
             break;
           case "op2":
             $("#content_row_3").show();
             $("#content_row_2").hide();
-            $("#content_row_4").hide();
-            break;
-          case "op3":
-            $("#content_row_4").show();
-            $("#content_row_2").hide();
-            $("#content_row_3").hide();
             break;
           default:
             $("#content_row_2").hide();
             $("#content_row_3").hide();
-            $("#content_row_4").hide();
         }
       });
       
