@@ -67,6 +67,7 @@ class SVM:
         t1 = time.clock()
         training_time = t1 - t0
         t2 = time.clock()
+
         if self.base == 1:
             predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 4))
         else:
