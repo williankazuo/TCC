@@ -30,44 +30,78 @@
               <select id="db_select">
                 <option value="op0">Selecione</option>
                 <option value="op1">Iris DataSet</option>
-                <option value="op2">PokerHand DataSet</option>
+                <option value="op2">Tic-Tac-Toe Dataset</option>
               </select>
             </div>
           </div>
           <div class="row" id="content_row_2">
             <div class="col-md-12">
               <label for="compsep">Comprimento da Sépala(cm)</label>
-              <input type="text" class="input_boxes" name="compsep" placeholder="Tamanho da Flor" id="iris1"></input>
+              <input type="number" class="input_boxes" name="compsep" placeholder="Tamanho da Flor" id="iris1"></input>
               <label for="largsep">Largura da Sépala(cm)</label>
-              <input type="text" class="input_boxes" name="largsep" placeholder="Comprimento da Flor" id="iris2"></input>
+              <input type="number" class="input_boxes" name="largsep" placeholder="Comprimento da Flor" id="iris2"></input>
               <label for="comppet">Comprimento da Pétala(cm)</label>
-              <input type="text" class="input_boxes" name="comppet" placeholder="Comprimento da Flor" id="iris3"></input>
+              <input type="number" class="input_boxes" name="comppet" placeholder="Comprimento da Flor" id="iris3"></input>
               <label for="largpet">Largura da Pétala(cm)</label>
-              <input type="text" class="input_boxes" name="largpet" placeholder="Comprimento da Flor" id="iris4"></input>
+              <input type="number" class="input_boxes" name="largpet" placeholder="Comprimento da Flor" id="iris4"></input>
             </div>
           </div>
           <div class="row" id="content_row_3">
             <div class="col-md-12">
-              <label for="tamdota">Carta 1</label>
-              <input type="text" class="input_boxes2" name="carta1" placeholder="Tamanho do Dota" id="poker1"></input>
-              <label for="tamdota">Naipe 1</label>
-              <input type="text" class="input_boxes2" name="naipe1" placeholder="Tamanho do Dota" id="poker2"></input>
-              <label for="tamdota">Carta 2</label>
-              <input type="text" class="input_boxes2" name="carta2" placeholder="Tamanho do Dota" id="poker3"></input>
-              <label for="tamdota">Naipe 2</label>
-              <input type="text" class="input_boxes2" name="naipe2" placeholder="Tamanho do Dota" id="poker4"></input>
-              <label for="tamdota">Carta 3</label>
-              <input type="text" class="input_boxes2" name="carta3" placeholder="Tamanho do Dota" id="poker5"></input>
-              <label for="tamdota">Naipe 3</label>
-              <input type="text" class="input_boxes2" name="naipe3" placeholder="Tamanho do Dota" id="poker6"></input>
-              <label for="tamdota">Carta 4</label>
-              <input type="text" class="input_boxes2" name="carta4" placeholder="Tamanho do Dota" id="poker7"></input>
-              <label for="tamdota">Naipe 4</label>
-              <input type="text" class="input_boxes2" name="naipe4" placeholder="Tamanho do Dota" id="poker8"></input>
-              <label for="tamdota">Carta 5</label>
-              <input type="text" class="input_boxes2" name="carta5" placeholder="Tamanho do Dota" id="poker9"></input>
-              <label for="tamdota">Naipe 5</label>
-              <input type="text" class="input_boxes2" name="naipe5" placeholder="Tamanho do Dota" id="poker10"></input>
+              <label for="tamdota">Primeira Lacuna:</label>
+              <select class="float-right" id="tic-tac1">
+                <option value="2">X</option>
+                <option value="1">O</option>
+                <option value="0">Branco</option>
+              </select>
+              <label for="tamdota">Segunda Lacuna:</label>
+              <select class="float-right" id="tic-tac2">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
+              <label for="tamdota">Terceira Lacuna:</label>
+              <select class="float-right" id="tic-tac3">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
+              <label for="tamdota">Quarta Lacuna:</label>
+              <select class="float-right" id="tic-tac4">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
+              <label for="tamdota">Quinta Lacuna:</label>
+              <select class="float-right" id="tic-tac5">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
+              <label for="tamdota">Sexta Lacuna:</label>
+              <select class="float-right" id="tic-tac6">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
+              <label for="tamdota">Setima Lacuna:</label>
+              <select class="float-right" id="tic-tac7">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
+              <label for="tamdota">Oitava Lacuna:</label>
+              <select class="float-right" id="tic-tac8">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
+              <label for="tamdota">Nona Lacuna:</label>
+              <select class="float-right" id="tic-tac9">
+                  <option value="2">X</option>
+                  <option value="1">O</option>
+                  <option value="0">Branco</option>
+                </select>
             </div>
           </div>
           <div class="row text-center" id="content_row_5">
@@ -80,7 +114,7 @@
           <div class="row align-items-center">
             <div class="col-md-6" id="first_quad">
               <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
+                Visualizar Gráfico
               </button>
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -104,7 +138,7 @@
             </div>
             <div class="col-md-6" id="second_quad">
               <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
+                  Visualizar Gráfico
               </button>
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -130,7 +164,7 @@
           <div class="row align-items-center">
             <div class="col-md-6" id="third_quad">
               <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
+                  Visualizar Gráfico
               </button>
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -154,7 +188,7 @@
             </div>
             <div class="col-md-6" id="fourth_quad">
               <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
+                  Visualizar Gráfico
               </button>
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -200,10 +234,20 @@
       
     });
     function TesteIntegrar(){
+      var opcao = $('#db_select :selected').val();
+      console.log($("#iris1").val());
+      if(opcao == "op1"){
         $.ajax({
           type: "POST",
-          url: '/api/testPostJson',
-          data: '{"dado" : "teste"}',
+          url: '/api/getdecisiontree',
+          data: '{'+
+            '"base" : 1,' +
+            '"parametro1": ' + $("#iris1").val() + ',' +
+            '"parametro2": ' + $("#iris2").val() + ',' +
+            '"parametro3": ' + $("#iris3").val() + ',' +
+            '"parametro4": ' + $("#iris4").val() +
+            '}'
+            ,
           contentType: 'application/json',
           dataType: 'json',
           success: function(resp){
@@ -214,6 +258,35 @@
           }   
        });
       }
+      if(opcao == "op2"){
+        $.ajax({
+          type: "POST",
+          url: '/api/getdecisiontree',
+          data: '{'+
+            '"base" : 2,' +
+            '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
+            '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
+            '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
+            '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
+            '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
+            '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
+            '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
+            '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
+            '"parametro9": ' + $("#tic-tac9 :selected").val() +
+            '}'
+            ,
+          contentType: 'application/json',
+          dataType: 'json',
+          success: function(resp){
+            console.log(resp);
+          },
+          error: function(err){
+            console.log("Erro");
+          }   
+       });
+      }
+      }
+        
     
   </script>
 </body>

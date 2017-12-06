@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn import svm
 from sklearn import datasets
-
+from sklearn import preprocessing
 
 class SVM:
 
@@ -37,7 +37,6 @@ class SVM:
             self.targets_testes.append(json_received['parametro7'])
             self.targets_testes.append(json_received['parametro8'])
             self.targets_testes.append(json_received['parametro9'])
-            self.targets_testes.append(json_received['parametro10'])
             print("segunda base")
 
     def load_iris_data(self):
@@ -48,29 +47,30 @@ class SVM:
             json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
             return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
         else:
-            data = pd.read_csv("POKER-HAND.csv")
-            features = data[["SuitOfCard1", "RankOfCard1", "SuitOfCard2", "RankOfCard2", "SuitOfCard3", "RankOfCard3", "SuitOfCard4", "RankOfCard4", "SuitOfCard5", "RankOfCard5"]]
+            data = pd.read_csv("TIC-TAC.csv")
+            features = data[["top-left", "top-middle", "top-right", "middle-left", "middle-middle", "middle-right",
+                             "bottom-left", "bottom-middle", "bottom-right"]]
+            # 2 é x, 1 é o, e 0 é b
+            features = features.apply(preprocessing.LabelEncoder().fit_transform)
             target_variables = data.Class
             # json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
-            json_object=[{
-                "teste":1
+            json_object = [{
+                "teste": 1
             }]
             return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
 
     def train_data(self, json_object, features, target_variables):
-        model = svm.SVC(gamma=0.001, C=100.0, probability=True, kernel='linear')
+        model = svm.SVC(probability=True)
         t0 = time.clock()
         print(features)
         fitted_model = model.fit(features, target_variables)
         t1 = time.clock()
         training_time = t1 - t0
-
-
         t2 = time.clock()
         if self.base == 1:
             predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 4))
         else:
-            predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 10))
+            predictions = fitted_model.predict(np.array(self.targets_testes).reshape(-1, 9))
         t3 = time.clock()
         prediction_time = t3 - t2
 
@@ -80,7 +80,7 @@ class SVM:
                                     predictions, training_time, prediction_time)
         else:
             return self.return_data(json_object,
-                                    fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 10)),
+                                    fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 9)),
                                     predictions, training_time, prediction_time)
 
     @staticmethod
