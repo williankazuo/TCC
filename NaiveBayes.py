@@ -62,7 +62,7 @@ class NaiveBayes:
     def train_data(self, json_object, features, target_variables):
         model = naive_bayes.GaussianNB()
         t0 = time.clock()
-        fitted_model = model.fit(features.head(), target_variables.head())
+        fitted_model = model.fit(features, target_variables)
         t1 = time.clock()
         training_time = t1 - t0
 

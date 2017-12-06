@@ -60,7 +60,7 @@ class SVM:
             return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
 
     def train_data(self, json_object, features, target_variables):
-        model = svm.SVC(probability=True)
+        model = svm.SVC(C=1.0, probability=True)
         t0 = time.clock()
         print(features)
         fitted_model = model.fit(features, target_variables)
