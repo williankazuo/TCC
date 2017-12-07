@@ -3,6 +3,8 @@ import pandas as pd
 import time
 import json
 import matplotlib.pyplot as plt
+import os
+import psutil
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.cross_validation import train_test_split
@@ -66,9 +68,10 @@ class DecisionTree:
 
     def train_data(self, json_object, features, target_variables):
         model = DecisionTreeClassifier()
-        print(features)
         t0 = time.clock()
         fitted_model = model.fit(features, target_variables)
+        process = psutil.Process(os.getpid())
+        memory_consumption = (process.memory_info()[0]/2.**30)
         t1 = time.clock()
         training_time = t1 - t0
 
@@ -83,11 +86,11 @@ class DecisionTree:
         prediction_time = t3 - t2
 
         if self.base == 1:
-            return self.return_data(json_object, fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)), predictions, training_time, prediction_time)
+            return self.return_data(json_object, fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 4)), predictions, training_time, prediction_time, memory_consumption)
         else:
             return self.return_data(json_object,
                                     fitted_model.predict_proba(np.array(self.targets_testes).reshape(-1, 9)),
-                                    predictions, training_time, prediction_time)
+                                    predictions, training_time, prediction_time, memory_consumption)
 
     @staticmethod
     def generate_graphics(features, target_variables):
@@ -144,7 +147,7 @@ class DecisionTree:
         tree.export_graphviz(fitted_model, out_file='tree.dot')
 
     @staticmethod
-    def return_data(json_object, predict_proba, predictions, training_time, prediction_time):
+    def return_data(json_object, predict_proba, predictions, training_time, prediction_time, memory_consumption):
         # confusion_matrix_return = confusion_matrix(a, predictions)
         # accuracy_return = accuracy_score(a, predictions)
         return json.dumps({
@@ -153,7 +156,8 @@ class DecisionTree:
             'prediction': predictions.tolist(),
             'accuracy': predict_proba.tolist(),
             'training_time': training_time,
-            'prediction_time': prediction_time
+            'prediction_time': prediction_time,
+            'memory_consumption': memory_consumption
         })
 
 

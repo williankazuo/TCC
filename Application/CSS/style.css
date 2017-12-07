@@ -7,6 +7,21 @@
   height:920px;
 }
 
+.max-width{
+  width: 100%;
+}
+#result1{
+  color: #ffffff;
+  font-weight: bold;
+}
+#result2{
+  color: #ffffff;
+  font-weight: bold;
+}
+#result3{
+  color: #ffffff;
+  font-weight: bold;
+}
 #main_title{
   color: #ffffff;
   font-size:25px;
@@ -26,26 +41,42 @@
 
 #first_quad{
   background-color:#ffffff;
-  height:460px;
+  height:300px;
   border: solid 1px #bfbdbd;
 }
 
 #second_quad{
   background-color:#ffffff;
-  height:460px;
+  height:300px;
   border: solid 1px #bfbdbd;
 }
 
 #third_quad{
   background-color:#ffffff;
-  height:460px;
+  height:300px;
   border: solid 1px #bfbdbd;
 }
 
 #fourth_quad{
   background-color:#ffffff;
-  height:460px;
+  height:300px;
   border: solid 1px #bfbdbd;
+}
+
+#char_trainingtime{
+  margin: 80px 0 0 0;
+}
+
+#char_predicttime{
+  margin: 80px 0 0 0;
+}
+
+#char_precision{
+  margin: 80px 0 0 0;
+}
+
+#char_memory{
+  margin: 80px 0 0 0;
 }
 
 #db_select{

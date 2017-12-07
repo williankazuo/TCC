@@ -3,285 +3,404 @@
 
 <head>
   <title>Let's Do It!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
   <script src="/Application/Javascript/jquery-3.2.1.min.js" type="text/Javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <link rel="stylesheet" href="/Application/CSS/style.css" type="text/css">
 </head>
 
 <body>
   <div class="container-fluid">
-      <div class="row align-items-center title_row">
+    <div class="row align-items-center title_row">
 
-        <div class="col-md-2">
-          <b id="main_title">Rocket</b>
-        </div>
-
-        <div class="col-md-10">
-        </div>
-
+      <div class="col-md-3">
+        <b id="main_title">Rocket</b>
       </div>
-      
-      <div class="row content_row">
-        <div class="col-md-3" id="options_column">
-          <div class="row content_row_1">
-            <div class="col-md-12">
-              <b><p>Selecione o Banco:</p></b>
-              <select id="db_select">
-                <option value="op0">Selecione</option>
-                <option value="op1">Iris DataSet</option>
-                <option value="op2">Tic-Tac-Toe Dataset</option>
-              </select>
-            </div>
-          </div>
-          <div class="row" id="content_row_2">
-            <div class="col-md-12">
-              <label for="compsep">Comprimento da Sépala(cm)</label>
-              <input type="number" class="input_boxes" name="compsep" placeholder="Tamanho da Flor" id="iris1"></input>
-              <label for="largsep">Largura da Sépala(cm)</label>
-              <input type="number" class="input_boxes" name="largsep" placeholder="Comprimento da Flor" id="iris2"></input>
-              <label for="comppet">Comprimento da Pétala(cm)</label>
-              <input type="number" class="input_boxes" name="comppet" placeholder="Comprimento da Flor" id="iris3"></input>
-              <label for="largpet">Largura da Pétala(cm)</label>
-              <input type="number" class="input_boxes" name="largpet" placeholder="Comprimento da Flor" id="iris4"></input>
-            </div>
-          </div>
-          <div class="row" id="content_row_3">
-            <div class="col-md-12">
-              <label for="tamdota">Primeira Lacuna:</label>
-              <select class="float-right" id="tic-tac1">
-                <option value="2">X</option>
-                <option value="1">O</option>
-                <option value="0">Branco</option>
-              </select>
-              <label for="tamdota">Segunda Lacuna:</label>
-              <select class="float-right" id="tic-tac2">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-              <label for="tamdota">Terceira Lacuna:</label>
-              <select class="float-right" id="tic-tac3">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-              <label for="tamdota">Quarta Lacuna:</label>
-              <select class="float-right" id="tic-tac4">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-              <label for="tamdota">Quinta Lacuna:</label>
-              <select class="float-right" id="tic-tac5">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-              <label for="tamdota">Sexta Lacuna:</label>
-              <select class="float-right" id="tic-tac6">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-              <label for="tamdota">Setima Lacuna:</label>
-              <select class="float-right" id="tic-tac7">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-              <label for="tamdota">Oitava Lacuna:</label>
-              <select class="float-right" id="tic-tac8">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-              <label for="tamdota">Nona Lacuna:</label>
-              <select class="float-right" id="tic-tac9">
-                  <option value="2">X</option>
-                  <option value="1">O</option>
-                  <option value="0">Branco</option>
-                </select>
-            </div>
-          </div>
-          <div class="row text-center" id="content_row_5">
-            <div class="col-md-12">
-              <button class="btn btn-primary btn-iniciar" onclick="TesteIntegrar()">Iniciar</button>
-            </div>
+
+      <div class="row col-md-9">
+        <div class="row col-md-4">
+            <label id="result1">Decision Tree:</label>
+        </div>
+        
+        <div class="row col-md-4">
+            <label id="result2" class="max-width text-center">Naive Bayes:</label>
+        </div>
+        <div class="row col-md-4">
+              <label id="result3" class="max-width text-center">SVM:</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row content_row">
+      <div class="col-md-3" id="options_column">
+        <div class="row content_row_1">
+          <div class="col-md-12">
+            <b>
+              <p>Selecione o Banco:</p>
+            </b>
+            <select id="db_select">
+              <option value="op0">Selecione</option>
+              <option value="op1">Iris DataSet</option>
+              <option value="op2">Tic-Tac-Toe Dataset</option>
+            </select>
           </div>
         </div>
-        <div class="col-md-9" id="data_column">
-          <div class="row align-items-center">
-            <div class="col-md-6" id="first_quad">
-              <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                Visualizar Gráfico
-              </button>
-              <div id="char_trainingtime"></div>
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6" id="second_quad">
-              <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                  Visualizar Gráfico
-              </button>
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="row" id="content_row_2">
+          <div class="col-md-12">
+            <label for="compsep">Comprimento da Sépala(cm)</label>
+            <input type="number" class="input_boxes" name="compsep" placeholder="Tamanho da Flor" id="iris1"></input>
+            <label for="largsep">Largura da Sépala(cm)</label>
+            <input type="number" class="input_boxes" name="largsep" placeholder="Comprimento da Flor" id="iris2"></input>
+            <label for="comppet">Comprimento da Pétala(cm)</label>
+            <input type="number" class="input_boxes" name="comppet" placeholder="Comprimento da Flor" id="iris3"></input>
+            <label for="largpet">Largura da Pétala(cm)</label>
+            <input type="number" class="input_boxes" name="largpet" placeholder="Comprimento da Flor" id="iris4"></input>
           </div>
-          <div class="row align-items-center">
-            <div class="col-md-6" id="third_quad">
-              <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                  Visualizar Gráfico
-              </button>
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6" id="fourth_quad">
-              <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
-                  Visualizar Gráfico
-              </button>
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="row" id="content_row_3">
+          <div class="col-md-12">
+            <label for="tamdota">Primeira Lacuna:</label>
+            <select class="float-right" id="tic-tac1">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Segunda Lacuna:</label>
+            <select class="float-right" id="tic-tac2">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Terceira Lacuna:</label>
+            <select class="float-right" id="tic-tac3">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Quarta Lacuna:</label>
+            <select class="float-right" id="tic-tac4">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Quinta Lacuna:</label>
+            <select class="float-right" id="tic-tac5">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Sexta Lacuna:</label>
+            <select class="float-right" id="tic-tac6">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Setima Lacuna:</label>
+            <select class="float-right" id="tic-tac7">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Oitava Lacuna:</label>
+            <select class="float-right" id="tic-tac8">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+            <label for="tamdota">Nona Lacuna:</label>
+            <select class="float-right" id="tic-tac9">
+              <option value="2">X</option>
+              <option value="1">O</option>
+              <option value="0">Branco</option>
+            </select>
+          </div>
+        </div>
+        <div class="row text-center" id="content_row_5">
+          <div class="col-md-12">
+            <button class="btn btn-primary btn-iniciar" onclick="TesteIntegrar()">Iniciar</button>
           </div>
         </div>
       </div>
-  <script>
-    $(document).ready(function(){
-      $('#db_select').on('change',function(){
-        var selection = $(this).val();
-        switch(selection){
-          case "op1":
-            $("#content_row_2").show();
-            $("#content_row_3").hide();
-            break;
-          case "op2":
-            $("#content_row_3").show();
-            $("#content_row_2").hide();
-            break;
-          default:
-            $("#content_row_2").hide();
-            $("#content_row_3").hide();
-        }
+      <div class="col-md-9" id="data_column">
+        <div class="row align-items-center">
+          <div class="col-md-6" id="first_quad">
+            <div id="char_trainingtime"></div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" id="second_quad">
+            <div id="char_predicttime"></div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6" id="third_quad">
+            <div id="char_precision"></div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" id="fourth_quad">
+            <div id="char_memory"></div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $('#db_select').on('change', function () {
+          var selection = $(this).val();
+          switch (selection) {
+            case "op1":
+              $("#content_row_2").show();
+              $("#content_row_3").hide();
+              break;
+            case "op2":
+              $("#content_row_3").show();
+              $("#content_row_2").hide();
+              break;
+            default:
+              $("#content_row_2").hide();
+              $("#content_row_3").hide();
+          }
+        });
+
       });
-      
-    });
-    google.charts.load('current', { packages: ['corechart', 'bar'] });
-    function TesteIntegrar(){
-      var opcao = $('#db_select :selected').val();
-      console.log($("#iris1").val());
-      if(opcao == "op1"){
-        $.ajax({
-          type: "POST",
-          url: '/api/getdecisiontree',
-          data: '{'+
-            '"base" : 1,' +
-            '"parametro1": ' + $("#iris1").val() + ',' +
-            '"parametro2": ' + $("#iris2").val() + ',' +
-            '"parametro3": ' + $("#iris3").val() + ',' +
-            '"parametro4": ' + $("#iris4").val() +
-            '}'
+      google.charts.load('current', { packages: ['corechart', 'bar'] });
+      function TesteIntegrar() {
+        var opcao = $('#db_select :selected').val();
+        if (opcao == "op1") {
+          $.ajax({
+            type: "POST",
+            url: '/api/getdecisiontree',
+            async: false,
+            data: '{' +
+              '"base" : 1,' +
+              '"parametro1": ' + $("#iris1").val() + ',' +
+              '"parametro2": ' + $("#iris2").val() + ',' +
+              '"parametro3": ' + $("#iris3").val() + ',' +
+              '"parametro4": ' + $("#iris4").val() +
+              '}'
             ,
-          contentType: 'application/json',
-          dataType: 'json',
-          success: function(resp){
-            console.log(resp['training_time']);
-            var training_time = resp.training_time;
-            var data = google.visualization.arrayToDataTable([
-              ['Título', 'Tempo_Treinamento'],
-              ['DecisionTree', training_time]
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (resp) {
+              var training_time_tree = resp.training_time;
+              var predict_time_tree = resp.prediction_time;
+              console.log(Number(predict_time_tree))
+              var accuracy_tree = resp.accuracy;
+              $("#result1").text("Decision Tree: "+resp.prediction[0])
+              var memory_consumption_tree = resp.memory_consumption;
+              var grafico = google.visualization.arrayToDataTable([
+                ['Título', 'Tempo_Treinamento'],
+                ['DecisionTree', Number(training_time_tree)]
               ]);
-            var options = {
-              title: 'Gráfico Tempo de Treinamento',
-              chartArea: { width: '50%' },
-              hAxis: {
-                title: 'Tempo de treinamento',
-                minValue: 0
-              }
-            };
-            var chart = new google.visualization.BarChart(document.getElementById('char_trainingtime'));
-            chart.draw(data, options);
-          },
-          error: function(err){
-            console.log("Erro");
-          }   
-       });
-      }
-      if(opcao == "op2"){
-        $.ajax({
-          type: "POST",
-          url: '/api/getdecisiontree',
-          data: '{'+
+              var grafico2 = google.visualization.arrayToDataTable([
+                ['Título', 'Tempo_Predição'],
+                ['DecisionTree', Number(predict_time_tree)]
+              ]);
+              var grafico3 = google.visualization.arrayToDataTable([
+                ['Título', 'Setosa', 'Versicolor', 'Virginica'],
+                ['DecisionTree', Number(accuracy_tree[0][0]), Number(accuracy_tree[0][1]), Number(accuracy_tree[0][2])]
+              ]);
+              var grafico4 = google.visualization.arrayToDataTable([
+                ['Título', 'Consumo_Memória'],
+                ['DecisionTree', Number(memory_consumption_tree)]
+              ]);
+              //Segundo call ajax
+              $.ajax({
+                type: "POST",
+                url: '/api/getnaive',
+                async: false,
+                data: '{' +
+                  '"base" : 1,' +
+                  '"parametro1": ' + $("#iris1").val() + ',' +
+                  '"parametro2": ' + $("#iris2").val() + ',' +
+                  '"parametro3": ' + $("#iris3").val() + ',' +
+                  '"parametro4": ' + $("#iris4").val() +
+                  '}'
+                ,
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (resp) {
+                  var training_time_naive = resp.training_time;
+                  var predict_time_naive = resp.prediction_time;
+                  var accuracy_naive = resp.accuracy;
+                  var memory_consumption_naive = resp.memory_consumption;
+                  $("#result2").text("Naive Bayes: "+resp.prediction[0])
+                  grafico.addRow(['Naive Bayes', Number(training_time_naive)]);
+                  grafico2.addRow(['Naive Bayes', Number(predict_time_naive)]);
+                  grafico3.addRow(['Naive Bayes', Number(accuracy_naive[0][0]), Number(accuracy_naive[0][1]), Number(accuracy_naive[0][2])]);                 
+                  grafico4.addRow(['Naive Bayes', Number(memory_consumption_naive)]);
+                  //Terceiro call ajax
+                  $.ajax({
+                    type: "POST",
+                    url: '/api/getsvm',
+                    async: false,
+                    data: '{' +
+                      '"base" : 1,' +
+                      '"parametro1": ' + $("#iris1").val() + ',' +
+                      '"parametro2": ' + $("#iris2").val() + ',' +
+                      '"parametro3": ' + $("#iris3").val() + ',' +
+                      '"parametro4": ' + $("#iris4").val() +
+                      '}'
+                    ,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    success: function (resp) {
+                      var training_time_svm = resp.training_time;
+                      var predic_time_svm = resp.prediction_time;
+                      var accuracy_svm = resp.accuracy;
+                      var memory_consumption_svm = resp.memory_consumption;
+                      $("#result3").text("SVM: "+resp.prediction[0])
+                      grafico.addRow(['SVM', Number(training_time_svm)]);
+                      grafico2.addRow(['SVM', Number(predic_time_svm)]);
+                      grafico3.addRow(['SVM', Number(accuracy_svm[0][0]), Number(accuracy_svm[0][1]), Number(accuracy_svm[0][2])]);
+                      grafico4.addRow(['SVM', Number(memory_consumption_svm)]);
+                      var options = {
+                        title: 'Gráfico Tempo de Treinamento',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico Tempo de Treinamento',
+                          minValue: 0
+                        }
+                      };
+                      var options2 = {
+                        title: 'Gráfico Tempo de Predição',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico Tempo de Predição',
+                          minValue: 0
+                        }
+                      };
+                      var options3 = {
+                        title: 'Gráfico de Precisão',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico de Precisão',
+                          minValue: 0
+                        }
+                      };
+                      var options4 = {
+                        title: 'Gráfico Consumo de Memória',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico Consumo de Memória',
+                          minValue: 0,
+                        }
+                        
+                      };
+                      var chart = new google.visualization.ColumnChart(document.getElementById('char_trainingtime'));
+                      chart.draw(grafico, options);
+                      var chart2 = new google.visualization.ColumnChart(document.getElementById('char_predicttime'));
+                      chart2.draw(grafico2, options2);
+                      var chart3 = new google.visualization.ColumnChart(document.getElementById('char_precision'));
+                      chart3.draw(grafico3, options3);
+                      var chart4 = new google.visualization.ColumnChart(document.getElementById('char_memory'));
+                      chart4.draw(grafico4, options4);
+                    },
+                    error: function (err) {
+                      console.log("Erro");
+                    }
+                  });
+                },
+                error: function (err) {
+                  console.log("Erro");
+                }
+              });
+            },
+            error: function (err) {
+              console.log("Erro");
+            }
+          });
+        }
+
+
+
+
+
+        if (opcao == "op2") {
+          $.ajax({
+            type: "POST",
+            url: '/api/getdecisiontree',
+            async: false,
+            data: '{' +
             '"base" : 2,' +
             '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
             '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
@@ -294,19 +413,152 @@
             '"parametro9": ' + $("#tic-tac9 :selected").val() +
             '}'
             ,
-          contentType: 'application/json',
-          dataType: 'json',
-          success: function(resp){
-            console.log(resp);
-          },
-          error: function(err){
-            console.log("Erro");
-          }   
-       });
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (resp) {
+              var training_time_tree = resp.training_time;
+              var predict_time_tree = resp.prediction_time;
+              console.log(Number(predict_time_tree))
+              var accuracy_tree = resp.accuracy;
+              $("#result1").text("Decision Tree: "+resp.prediction[0])
+              var memory_consumption_tree = resp.memory_consumption;
+              var grafico = google.visualization.arrayToDataTable([
+                ['Título', 'Tempo_Treinamento'],
+                ['DecisionTree', Number(training_time_tree)]
+              ]);
+              var grafico2 = google.visualization.arrayToDataTable([
+                ['Título', 'Tempo_Predição'],
+                ['DecisionTree', Number(predict_time_tree)]
+              ]);
+              var grafico3 = google.visualization.arrayToDataTable([
+                ['Título', 'Negativo', 'Positivo'],
+                ['DecisionTree', Number(accuracy_tree[0][0]), Number(accuracy_tree[0][1])]
+              ]);
+              var grafico4 = google.visualization.arrayToDataTable([
+                ['Título', 'Consumo_Memória'],
+                ['DecisionTree', Number(memory_consumption_tree)]
+              ]);
+              //Segundo call ajax
+              $.ajax({
+                type: "POST",
+                url: '/api/getnaive',
+                async: false,
+                data: '{' +
+                '"base" : 2,' +
+                '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
+                '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
+                '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
+                '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
+                '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
+                '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
+                '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
+                '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
+                '"parametro9": ' + $("#tic-tac9 :selected").val() +
+                '}'
+                ,
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (resp) {
+                  var training_time_naive = resp.training_time;
+                  var predict_time_naive = resp.prediction_time;
+                  var accuracy_naive = resp.accuracy;
+                  var memory_consumption_naive = resp.memory_consumption;
+                  $("#result2").text("Naive Bayes: "+resp.prediction[0])
+                  grafico.addRow(['Naive Bayes', Number(training_time_naive)]);
+                  grafico2.addRow(['Naive Bayes', Number(predict_time_naive)]);
+                  grafico3.addRow(['Naive Bayes', Number(accuracy_naive[0][0]), Number(accuracy_naive[0][1])]);
+                  grafico4.addRow(['Naive Bayes', Number(memory_consumption_naive)]);
+                  //Terceiro call ajax
+                  $.ajax({
+                    type: "POST",
+                    url: '/api/getsvm',
+                    async: false,
+                    data: '{' +
+                    '"base" : 2,' +
+                    '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
+                    '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
+                    '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
+                    '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
+                    '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
+                    '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
+                    '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
+                    '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
+                    '"parametro9": ' + $("#tic-tac9 :selected").val() +
+                    '}'
+                    ,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    success: function (resp) {
+                      var training_time_svm = resp.training_time;
+                      var predic_time_svm = resp.prediction_time;
+                      var accuracy_svm = resp.accuracy;
+                      var memory_consumption_svm = resp.memory_consumption;
+                      $("#result3").text("SVM: "+resp.prediction[0])
+                      grafico.addRow(['SVM', Number(training_time_svm)]);
+                      grafico2.addRow(['SVM', Number(predic_time_svm)]);
+                      grafico3.addRow(['SVM', Number(accuracy_naive[0][0]), Number(accuracy_naive[0][1])]);
+                      grafico4.addRow(['SVM', Number(memory_consumption_svm)]);
+                      var options = {
+                        title: 'Gráfico Tempo de Treinamento',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico Tempo de Treinamento',
+                          minValue: 0
+                        }
+                      };
+                      var options2 = {
+                        title: 'Gráfico Tempo de Predição',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico Tempo de Predição',
+                          minValue: 0
+                        }
+                      };
+                      var options3 = {
+                        title: 'Gráfico de Precisão',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico de Precisão',
+                          minValue: 0
+                        }
+                      };
+                      var options4 = {
+                        title: 'Gráfico Consumo de Memória',
+                        chartArea: { width: '80%' },
+                        hAxis: {
+                          title: 'Gráfico Consumo de Memória',
+                          minValue: 0,
+                        }
+                        
+                      };
+                      var chart = new google.visualization.ColumnChart(document.getElementById('char_trainingtime'));
+                      chart.draw(grafico, options);
+                      var chart2 = new google.visualization.ColumnChart(document.getElementById('char_predicttime'));
+                      chart2.draw(grafico2, options2);
+                      var chart3 = new google.visualization.ColumnChart(document.getElementById('char_precision'));
+                      chart3.draw(grafico3, options3);
+                      var chart4 = new google.visualization.ColumnChart(document.getElementById('char_memory'));
+                      chart4.draw(grafico4, options4);
+                    },
+                    error: function (err) {
+                      console.log("Erro");
+                    }
+                  });
+                },
+                error: function (err) {
+                  console.log("Erro");
+                }
+              });
+            },
+            error: function (err) {
+              console.log("Erro");
+            }
+          });
+        }
       }
-      }
-        
-    
-  </script>
+
+
+    </script>
 </body>
+
 </html>
