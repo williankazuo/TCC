@@ -48,5 +48,10 @@ def main_css():
     return send_from_directory('Application/CSS', 'style.css')
 
 
+@app.route('/Application/oval.svg')
+def img_load():
+    return send_from_directory('Application', 'oval.svg')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

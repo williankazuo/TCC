@@ -50,7 +50,10 @@ class DecisionTree:
             data = pd.read_csv("IRIS.csv")
             features = data[["SepalLength", "SepalWidth", "PetalLength", "PetalWidth"]]
             target_variables = data.Class
-            json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
+            json_object = [{
+                "teste": 1
+            }]
+            # json_object = (self.generate_graphics(features.as_matrix(), target_variables.as_matrix()))
 
             return self.train_data(json_object, features.as_matrix(), target_variables.as_matrix())
         else:
@@ -69,9 +72,9 @@ class DecisionTree:
     def train_data(self, json_object, features, target_variables):
         model = DecisionTreeClassifier()
         t0 = time.clock()
-        fitted_model = model.fit(features, target_variables)
         process = psutil.Process(os.getpid())
-        memory_consumption = (process.memory_info()[0]/2.**30)
+        memory_consumption = (process.memory_info()[0] / 2. ** 30)
+        fitted_model = model.fit(features, target_variables)
         t1 = time.clock()
         training_time = t1 - t0
 

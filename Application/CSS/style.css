@@ -6,7 +6,21 @@
 .content_row{
   height:920px;
 }
-
+#loadingDiv {
+  margin: 113px auto;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  z-index: 10;
+}
+#h3_loading {
+  font-size: 13px;
+  margin-top: 10px;
+}
+#divdoloading{
+  background: rgba(255, 254, 254, 0.8);
+}
 .max-width{
   width: 100%;
 }

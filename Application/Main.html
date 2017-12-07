@@ -15,6 +15,8 @@
 </head>
 
 <body>
+
+
   <div class="container-fluid">
     <div class="row align-items-center title_row">
 
@@ -24,14 +26,14 @@
 
       <div class="row col-md-9">
         <div class="row col-md-4">
-            <label id="result1">Decision Tree:</label>
+          <label id="result1">Decision Tree:</label>
         </div>
-        
+
         <div class="row col-md-4">
-            <label id="result2" class="max-width text-center">Naive Bayes:</label>
+          <label id="result2" class="max-width text-center">Naive Bayes:</label>
         </div>
         <div class="row col-md-4">
-              <label id="result3" class="max-width text-center">SVM:</label>
+          <label id="result3" class="max-width text-center">SVM:</label>
         </div>
       </div>
 
@@ -265,7 +267,7 @@
               var predict_time_tree = resp.prediction_time;
               console.log(Number(predict_time_tree))
               var accuracy_tree = resp.accuracy;
-              $("#result1").text("Decision Tree: "+resp.prediction[0])
+              $("#result1").text("Decision Tree: " + resp.prediction[0])
               var memory_consumption_tree = resp.memory_consumption;
               var grafico = google.visualization.arrayToDataTable([
                 ['Título', 'Tempo_Treinamento'],
@@ -303,10 +305,10 @@
                   var predict_time_naive = resp.prediction_time;
                   var accuracy_naive = resp.accuracy;
                   var memory_consumption_naive = resp.memory_consumption;
-                  $("#result2").text("Naive Bayes: "+resp.prediction[0])
+                  $("#result2").text("Naive Bayes: " + resp.prediction[0])
                   grafico.addRow(['Naive Bayes', Number(training_time_naive)]);
                   grafico2.addRow(['Naive Bayes', Number(predict_time_naive)]);
-                  grafico3.addRow(['Naive Bayes', Number(accuracy_naive[0][0]), Number(accuracy_naive[0][1]), Number(accuracy_naive[0][2])]);                 
+                  grafico3.addRow(['Naive Bayes', Number(accuracy_naive[0][0]), Number(accuracy_naive[0][1]), Number(accuracy_naive[0][2])]);
                   grafico4.addRow(['Naive Bayes', Number(memory_consumption_naive)]);
                   //Terceiro call ajax
                   $.ajax({
@@ -328,7 +330,7 @@
                       var predic_time_svm = resp.prediction_time;
                       var accuracy_svm = resp.accuracy;
                       var memory_consumption_svm = resp.memory_consumption;
-                      $("#result3").text("SVM: "+resp.prediction[0])
+                      $("#result3").text("SVM: " + resp.prediction[0])
                       grafico.addRow(['SVM', Number(training_time_svm)]);
                       grafico2.addRow(['SVM', Number(predic_time_svm)]);
                       grafico3.addRow(['SVM', Number(accuracy_svm[0][0]), Number(accuracy_svm[0][1]), Number(accuracy_svm[0][2])]);
@@ -364,8 +366,17 @@
                           title: 'Gráfico Consumo de Memória',
                           minValue: 0,
                         }
-                        
+
                       };
+                      var numberFormat = new google.visualization.NumberFormat({
+                        fractionDigits: 8
+                      })
+                      var numberFormat2 = new google.visualization.NumberFormat({
+                        fractionDigits: 5
+                      })
+                      numberFormat.format(grafico, 1)
+                      numberFormat2.format(grafico2, 1)
+                      numberFormat2.format(grafico4, 1)
                       var chart = new google.visualization.ColumnChart(document.getElementById('char_trainingtime'));
                       chart.draw(grafico, options);
                       var chart2 = new google.visualization.ColumnChart(document.getElementById('char_predicttime'));
@@ -401,26 +412,25 @@
             url: '/api/getdecisiontree',
             async: false,
             data: '{' +
-            '"base" : 2,' +
-            '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
-            '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
-            '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
-            '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
-            '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
-            '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
-            '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
-            '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
-            '"parametro9": ' + $("#tic-tac9 :selected").val() +
-            '}'
+              '"base" : 2,' +
+              '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
+              '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
+              '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
+              '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
+              '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
+              '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
+              '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
+              '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
+              '"parametro9": ' + $("#tic-tac9 :selected").val() +
+              '}'
             ,
             contentType: 'application/json',
             dataType: 'json',
             success: function (resp) {
               var training_time_tree = resp.training_time;
               var predict_time_tree = resp.prediction_time;
-              console.log(Number(predict_time_tree))
               var accuracy_tree = resp.accuracy;
-              $("#result1").text("Decision Tree: "+resp.prediction[0])
+              $("#result1").text("Decision Tree: " + resp.prediction[0])
               var memory_consumption_tree = resp.memory_consumption;
               var grafico = google.visualization.arrayToDataTable([
                 ['Título', 'Tempo_Treinamento'],
@@ -444,17 +454,17 @@
                 url: '/api/getnaive',
                 async: false,
                 data: '{' +
-                '"base" : 2,' +
-                '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
-                '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
-                '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
-                '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
-                '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
-                '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
-                '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
-                '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
-                '"parametro9": ' + $("#tic-tac9 :selected").val() +
-                '}'
+                  '"base" : 2,' +
+                  '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
+                  '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
+                  '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
+                  '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
+                  '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
+                  '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
+                  '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
+                  '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
+                  '"parametro9": ' + $("#tic-tac9 :selected").val() +
+                  '}'
                 ,
                 contentType: 'application/json',
                 dataType: 'json',
@@ -463,7 +473,7 @@
                   var predict_time_naive = resp.prediction_time;
                   var accuracy_naive = resp.accuracy;
                   var memory_consumption_naive = resp.memory_consumption;
-                  $("#result2").text("Naive Bayes: "+resp.prediction[0])
+                  $("#result2").text("Naive Bayes: " + resp.prediction[0])
                   grafico.addRow(['Naive Bayes', Number(training_time_naive)]);
                   grafico2.addRow(['Naive Bayes', Number(predict_time_naive)]);
                   grafico3.addRow(['Naive Bayes', Number(accuracy_naive[0][0]), Number(accuracy_naive[0][1])]);
@@ -474,17 +484,17 @@
                     url: '/api/getsvm',
                     async: false,
                     data: '{' +
-                    '"base" : 2,' +
-                    '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
-                    '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
-                    '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
-                    '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
-                    '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
-                    '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
-                    '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
-                    '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
-                    '"parametro9": ' + $("#tic-tac9 :selected").val() +
-                    '}'
+                      '"base" : 2,' +
+                      '"parametro1": ' + $("#tic-tac1 :selected").val() + ',' +
+                      '"parametro2": ' + $("#tic-tac2 :selected").val() + ',' +
+                      '"parametro3": ' + $("#tic-tac3 :selected").val() + ',' +
+                      '"parametro4": ' + $("#tic-tac4 :selected").val() + ',' +
+                      '"parametro5": ' + $("#tic-tac5 :selected").val() + ',' +
+                      '"parametro6": ' + $("#tic-tac6 :selected").val() + ',' +
+                      '"parametro7": ' + $("#tic-tac7 :selected").val() + ',' +
+                      '"parametro8": ' + $("#tic-tac8 :selected").val() + ',' +
+                      '"parametro9": ' + $("#tic-tac9 :selected").val() +
+                      '}'
                     ,
                     contentType: 'application/json',
                     dataType: 'json',
@@ -493,10 +503,10 @@
                       var predic_time_svm = resp.prediction_time;
                       var accuracy_svm = resp.accuracy;
                       var memory_consumption_svm = resp.memory_consumption;
-                      $("#result3").text("SVM: "+resp.prediction[0])
+                      $("#result3").text("SVM: " + resp.prediction[0])
                       grafico.addRow(['SVM', Number(training_time_svm)]);
                       grafico2.addRow(['SVM', Number(predic_time_svm)]);
-                      grafico3.addRow(['SVM', Number(accuracy_naive[0][0]), Number(accuracy_naive[0][1])]);
+                      grafico3.addRow(['SVM', Number(accuracy_svm[0][0]), Number(accuracy_svm[0][1])]);
                       grafico4.addRow(['SVM', Number(memory_consumption_svm)]);
                       var options = {
                         title: 'Gráfico Tempo de Treinamento',
@@ -529,8 +539,17 @@
                           title: 'Gráfico Consumo de Memória',
                           minValue: 0,
                         }
-                        
+
                       };
+                      var numberFormat = new google.visualization.NumberFormat({
+                        fractionDigits: 8
+                      })
+                      var numberFormat2 = new google.visualization.NumberFormat({
+                        fractionDigits: 5
+                      })
+                      numberFormat.format(grafico, 1)
+                      numberFormat2.format(grafico2, 1)
+                      numberFormat2.format(grafico4, 1)
                       var chart = new google.visualization.ColumnChart(document.getElementById('char_trainingtime'));
                       chart.draw(grafico, options);
                       var chart2 = new google.visualization.ColumnChart(document.getElementById('char_predicttime'));
